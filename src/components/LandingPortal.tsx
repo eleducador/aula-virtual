@@ -65,24 +65,20 @@ export const LandingPortal: React.FC<LandingPortalProps> = ({
     <div
       className="h-screen w-screen overflow-hidden flex flex-col text-white bg-cover bg-center bg-no-repeat relative select-none"
       style={{
-        backgroundImage: `linear-gradient(to bottom, rgba(10, 8, 16, 0.45), rgba(12, 8, 18, 0.65)), url(${INSTITUTION_ASSETS.fondoPagina})`,
+        backgroundImage: `linear-gradient(to bottom, rgba(10, 8, 16, 0.35), rgba(12, 8, 18, 0.55)), url(${INSTITUTION_ASSETS.fondoPagina})`,
       }}
     >
       {/* Top Header Bar (Compact & Sleek Dark Glass with Official 44 Años Crest) */}
       <header className="shrink-0 z-30 flex items-center justify-between px-6 py-3.5 bg-black/50 backdrop-blur-md border-b border-white/10">
         <div className="flex items-center gap-3">
-          {!crestImgError ? (
-            <img
-              src={INSTITUTION_ASSETS.crestEmblem}
-              alt="Insignia Oficial Oppenheimer 44 Años"
-              onError={() => setCrestImgError(true)}
-              className="w-11 h-11 rounded-xl object-contain border border-[#FACC15]/80 shadow-md bg-[#840A21]/80 p-0.5"
-            />
-          ) : (
-            <div className="w-11 h-11 rounded-xl bg-[#7F1D1D] flex items-center justify-center font-bold text-white text-xs border border-[#FACC15]">
-              CEO
-            </div>
-          )}
+          <img
+            src={crestImgError ? INSTITUTION_ASSETS.crestEmblemSvg : INSTITUTION_ASSETS.crestEmblem}
+            alt="Insignia Oficial Oppenheimer"
+            onError={() => {
+              if (!crestImgError) setCrestImgError(true);
+            }}
+            className="w-11 h-11 rounded-xl object-contain border border-[#FACC15]/80 shadow-md bg-[#840A21]/80 p-0.5"
+          />
           <div>
             <h1 className="text-base sm:text-lg font-bold tracking-tight text-[#FEF08A] font-display leading-tight drop-shadow-md">
               Colegio Capitán Enrique Oppenheimer
@@ -114,8 +110,11 @@ export const LandingPortal: React.FC<LandingPortalProps> = ({
             <div className="text-center mb-6">
               <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/10 border border-white/20 shadow-inner mb-3 backdrop-blur-md overflow-hidden p-1">
                 <img
-                  src={INSTITUTION_ASSETS.crestEmblem}
-                  alt="Escudo Oppenheimer 44 Años"
+                  src={crestImgError ? INSTITUTION_ASSETS.crestEmblemSvg : INSTITUTION_ASSETS.crestEmblem}
+                  alt="Escudo Oficial Oppenheimer"
+                  onError={() => {
+                    if (!crestImgError) setCrestImgError(true);
+                  }}
                   className="w-full h-full object-contain drop-shadow"
                 />
               </div>

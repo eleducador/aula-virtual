@@ -27,6 +27,7 @@ import {
   RotateCcw,
 } from 'lucide-react';
 import { UserProfile, CourseItem, CurricularMaterial } from '../types';
+import { INSTITUTION_ASSETS } from '../data/initialData';
 
 interface InicialKidExperienceViewProps {
   currentUser: UserProfile;
@@ -169,7 +170,7 @@ export const InicialKidExperienceView: React.FC<InicialKidExperienceViewProps> =
     <div
       className="h-screen w-screen overflow-hidden flex flex-col select-none relative font-sans text-slate-800"
       style={{
-        backgroundImage: "url('/src/assets/images/fondo_magico_inicial.svg')",
+        backgroundImage: `url(${INSTITUTION_ASSETS.fondoInicial})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}

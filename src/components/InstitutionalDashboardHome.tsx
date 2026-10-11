@@ -66,18 +66,15 @@ export const InstitutionalDashboardHome: React.FC<InstitutionalDashboardHomeProp
       {/* Institutional Home Banner */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
         <div className="lg:col-span-8 relative rounded-2xl overflow-hidden border border-white/15 bg-slate-950 min-h-[300px] flex flex-col justify-between p-6 sm:p-8 shadow-2xl">
-          {!campusError ? (
-            <img
-              src={INSTITUTION_ASSETS.campusHero}
-              alt="Campus Colegio Capitán Enrique Oppenheimer"
-              referrerPolicy="no-referrer"
-              onError={() => setCampusError(true)}
-              className="absolute inset-0 w-full h-full object-cover"
-            />
-          ) : (
-            <div className="absolute inset-0 bg-gradient-to-r from-[#7F1D1D] to-[#991B1B]" />
-          )}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-black/30" />
+          <img
+            src={campusError ? '/images/colegio_oppenheimer_campus_1791666912151.jpg' : INSTITUTION_ASSETS.campusHero}
+            alt="Campus Colegio Capitán Enrique Oppenheimer"
+            onError={() => {
+              if (!campusError) setCampusError(true);
+            }}
+            className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/40 to-black/15 pointer-events-none" />
 
           <div className="relative z-10 flex items-center justify-between gap-4">
             <div className="text-xs font-semibold text-[#FEF08A] bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10">
@@ -133,18 +130,15 @@ export const InstitutionalDashboardHome: React.FC<InstitutionalDashboardHomeProp
         {/* Right 4 Cols: Institutional Awards & Musical Heritage Card */}
         <div className="lg:col-span-4 rounded-2xl bg-black/60 backdrop-blur-xl border border-white/15 overflow-hidden flex flex-col justify-between shadow-2xl">
           <div className="relative h-40 bg-slate-950 border-b border-white/10">
-            {!awardsError ? (
-              <img
-                src={INSTITUTION_ASSETS.awardsBanner}
-                alt="Premios Obtenidos Colegio Oppenheimer"
-                referrerPolicy="no-referrer"
-                onError={() => setAwardsError(true)}
-                className="w-full h-full object-cover"
-              />
-            ) : (
-              <div className="w-full h-full bg-gradient-to-r from-[#7F1D1D] to-[#991B1B]" />
-            )}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent flex items-end p-4">
+            <img
+              src={awardsError ? '/images/colegio_oppenheimer_premios_1791666921941.jpg' : INSTITUTION_ASSETS.awardsBanner}
+              alt="Premios Obtenidos Colegio Oppenheimer"
+              onError={() => {
+                if (!awardsError) setAwardsError(true);
+              }}
+              className="w-full h-full object-cover object-center"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-transparent flex items-end p-4 pointer-events-none">
               <div>
                 <p className="text-[11px] font-semibold text-[#FEF08A]">
                   Orgullo Institucional · Premios Obtenidos

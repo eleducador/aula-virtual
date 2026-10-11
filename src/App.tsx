@@ -342,8 +342,8 @@ export function App() {
       className="h-screen w-screen overflow-hidden flex flex-col text-slate-100 bg-cover bg-center bg-no-repeat relative select-none"
       style={{
         backgroundImage: isInicialProfile && isAuthenticated
-          ? "url('/src/assets/images/fondo_magico_inicial.svg')"
-          : `linear-gradient(to bottom, rgba(10, 8, 16, 0.90), rgba(14, 10, 22, 0.96)), url(${INSTITUTION_ASSETS.fondoPagina})`,
+          ? `url(${INSTITUTION_ASSETS.fondoInicial})`
+          : `linear-gradient(to bottom, rgba(10, 8, 16, 0.65), rgba(14, 10, 22, 0.82)), url(${INSTITUTION_ASSETS.fondoPagina})`,
       }}
     >
       {/* Instant Push Notification Floating Toast (Dark Theme) */}

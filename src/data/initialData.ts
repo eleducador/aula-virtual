@@ -10,14 +10,25 @@ import {
   CurricularMaterial,
 } from '../types';
 
+import fondoPaginaImg from '../assets/images/fondo_institucional_oppenheimer.jpg';
+import fondoInicialImg from '../assets/images/fondo_magico_inicial.svg';
+import campusHeroImg from '../assets/images/colegio_oppenheimer_campus_1791666912151.jpg';
+import awardsBannerImg from '../assets/images/colegio_oppenheimer_premios_1791666921941.jpg';
+import compositePortalImg from '../assets/images/portada_acceso_oppenheimer_composite.jpg';
+import blendedPortalImg from '../assets/images/portada_acceso_oppenheimer_blended.jpg';
+import crestEmblemSvg from '../assets/images/escudo_oficial_oppenheimer_44.svg';
+import crestEmblemInsignia from '../assets/images/colegio_oppenheimer_insignia_1791666931203.jpg';
+
 export const INSTITUTION_ASSETS = {
-  fondoPagina: '/src/assets/images/fondo_institucional_oppenheimer.jpg',
-  fondoInicial: '/src/assets/images/fondo_magico_inicial.svg',
-  campusHero: '/src/assets/images/colegio_oppenheimer_campus_1791666912151.jpg',
-  awardsBanner: '/src/assets/images/colegio_oppenheimer_premios_1791666921941.jpg',
-  compositePortal: '/src/assets/images/portada_acceso_oppenheimer_composite.jpg',
-  blendedPortal: '/src/assets/images/portada_acceso_oppenheimer_blended.jpg',
-  crestEmblem: '/src/assets/images/escudo_oficial_oppenheimer_44.svg',
+  fondoPagina: fondoPaginaImg,
+  fondoInicial: fondoInicialImg,
+  campusHero: campusHeroImg,
+  awardsBanner: awardsBannerImg,
+  compositePortal: compositePortalImg,
+  blendedPortal: blendedPortalImg,
+  crestEmblem: crestEmblemInsignia,
+  crestEmblemInsignia: crestEmblemInsignia,
+  crestEmblemSvg: crestEmblemSvg,
 };
 
 // ============================================================================
